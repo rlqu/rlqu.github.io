@@ -1,6 +1,6 @@
-import { newLine } from "./line_util.js";
+import { newLine } from "./line_util";
 
-export async function loadMotd() {
+export async function loadMotd(): Promise<void> {
     let currentDate = new Date();
     let day = currentDate.getDate();
     let month = currentDate.getMonth() + 1;
@@ -11,8 +11,8 @@ export async function loadMotd() {
 
     return await fetch('../config/motd')
         .then(response => response.text())
-        .then((data) => {
-            let string = data.replaceAll("<now>", day + "/" + month + "/" + year + " " + hour + ":" + minute + ":" + second);
-            newLine(string, "");
+        .then((data: string) => {
+            let string = data.replace("<now>", day + "/" + month + "/" + year + " " + hour + ":" + minute + ":" + second);
+            newLine(string, "", "#d4d4d4");
         })
 }

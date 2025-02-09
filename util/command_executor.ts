@@ -1,9 +1,9 @@
-import { newLine, inputPrefix } from "./line_util.js";
+import { newLine } from "./line_util";
 
-export async function execute(commandName, args) {
+export async function execute(commandName: string, args: Array<string>) {
 
     try {
-        const commandModule = await import(`./command/${commandName}.js`);
+        const commandModule = await import(`./command/${commandName}`);
     
         if (typeof commandModule.executeCommand !== 'function') {
             throw new Error(`Command "${commandName}" does not export an executeCommand function.`);
@@ -12,6 +12,7 @@ export async function execute(commandName, args) {
         return await commandModule.executeCommand(args);
     } catch (error) {
         newLine(commandName + ": ", "command not found");
+        console.error(error);
         return;
     }
 

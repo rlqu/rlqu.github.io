@@ -1,7 +1,7 @@
 import { newLine } from "../line_util.js";
 
-export function executeCommand(name) {
-    if(name == "") {
+export function executeCommand(name: string) {
+    if(name.length <= 0) {
         newLine("Overview of usable commands", "", "#d4d4d4", "#d4d4d4");
         newLine(" ", "", "");
         newLine("Available commands:", "", "#d4d4d4", "#d4d4d4");
@@ -9,6 +9,7 @@ export function executeCommand(name) {
         newLine("  ", "cd     Changes the directory", "#d4d4d4", "#d4d4d4");
         newLine("  ", "cat    Prints out content of the given file", "#d4d4d4", "#d4d4d4");
         newLine("  ", "echo   Prints out back what you've entered", "#d4d4d4", "#d4d4d4");
+        newLine("  ", "clear  Clears the console", "#d4d4d4", "#d4d4d4");
         newLine(" ", "");
         newLine("Use \"help [command]\" for more information about a command.", "", "#d4d4d4", "#d4d4d4");
         return;
@@ -53,6 +54,4 @@ export function executeCommand(name) {
                 newLine("-bash: ", "help: no help topics match '" + name + "'. Try 'help'.", "#d4d4d4", "#d4d4d4");
             break;
     }
-
-    
 }

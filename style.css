@@ -33,7 +33,7 @@ div.line {
 }
 
 div.caret {
-  width: 8px;
+  width: 9px;
   height: 18px;
   background-color: #00df13;
   animation: caret-blink 1.14s steps(2, start) infinite;

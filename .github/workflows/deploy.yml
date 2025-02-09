@@ -1,0 +1,36 @@
+name: Build TypeScript Project
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch: 
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install TypeScript
+        run: |
+          sudo apt update
+          sudo apt install -y node-typescript  # Installs `tsc` without npm
+
+      - name: Compile TypeScript
+        run: tsc
+
+      - name: Upload built files
+        uses: actions/upload-artifact@v4
+        with:
+          name: built-project
+          path: .  # Change if needed (e.g., `./dist` if using `outDir` in tsconfig.json`)
+
+      - name: Deploy to GitHub Pages (optional)
+        if: github.ref == 'refs/heads/main'
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: .  # Adjust if needed

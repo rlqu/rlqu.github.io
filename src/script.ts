@@ -2,12 +2,12 @@ import {
     addCommandLineText, 
     getCommandLineText,
     setCommandLineText,
-} from "./util/text_util";
-import { execute } from "./util/command_executor";
-import { newLine, inputPrefix, getCaret } from "./util/line_util";
-import { addToHistory } from "./util/input_history";
-import { loadMotd } from "./util/motd";
-import { getCaretIndex, setCaretIndex } from "./util/caret_util";
+} from "./util/text_util.ts";
+import { execute } from "./util/command_executor.ts";
+import { newLine, inputPrefix, getCaret } from "./util/line_util.ts";
+import { addToHistory } from "./util/input_history.ts";
+import { loadMotd } from "./util/motd.ts";
+import { getCaretIndex, setCaretIndex } from "./util/caret_util.ts";
 
 window.addEventListener('load', async (event) => {
     //await loadMotd(); broken atm

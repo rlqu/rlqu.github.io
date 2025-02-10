@@ -1,4 +1,4 @@
-import { newLine } from "../line_util.js";
+import { newLine } from "../line_util.ts";
 
 export function executeCommand(name: string) {
     if(name.length <= 0) {

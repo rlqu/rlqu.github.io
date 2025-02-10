@@ -1,4 +1,4 @@
-import { setInputPrefix, newLine } from "../line_util.js";
+import { setInputPrefix, newLine } from "../line_util.ts";
 
 export function executeCommand(path: string) {
     if(path.toString().trim().length <= 0) return;

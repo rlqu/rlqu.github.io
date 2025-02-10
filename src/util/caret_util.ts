@@ -1,5 +1,5 @@
-import { getCaret } from "./line_util";
-import { getCommandLineText } from "./text_util";
+import { getCaret } from "./line_util.ts";
+import { getCommandLineText } from "./text_util.ts";
 
 var caretIndex = 0;
 

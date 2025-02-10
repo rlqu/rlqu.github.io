@@ -1,4 +1,4 @@
-import { newLine } from "./line_util";
+import { newLine } from "./line_util.ts";
 
 export async function loadMotd(): Promise<void> {
     let currentDate = new Date();

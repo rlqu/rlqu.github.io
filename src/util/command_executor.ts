@@ -1,4 +1,4 @@
-import { newLine } from "./line_util";
+import { newLine } from "./line_util.ts";
 
 export async function execute(commandName: string, args: Array<string>) {
 

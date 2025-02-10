@@ -1,4 +1,4 @@
-import { setCommandLineText } from "./text_util";
+import { setCommandLineText } from "./text_util.ts";
 
 let history = Array<string>();
 var historyIndex = 0;
